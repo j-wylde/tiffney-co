@@ -1,0 +1,256 @@
+// Defining Break-Points
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+$bp : (
+  mobile  : 480px,
+  tablet  : 768px,
+  desktop : 1440px,
+);
+
+//Defining our Conditional Media query Mixins.
+//To save Time & Coffee.
+
+@mixin query($screen){
+    @each $key,$value in $bp{
+        
+        //  defining max-width
+        @if ($screen == $key) {
+            @media (max-width : $value){@content};
+        }
+    }
+}
+
+
+
+//=========Theme Settings=======//
+$bg: #0b1b2d;
+$bg-gradient: linear-gradient(90deg, rgba(10,26,45,1) 0%, rgba(10,26,45,0.8744747899159664) 100%);
+$comp: #ff4040;
+$norm_white: #fff;
+$SairaFont: "Saira Condensed", sans-serif;
+$InterFont: "Inter", sans-serif;
+
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $InterFont;
+}
+svg {
+    border: none;
+    outline: none;
+}
+
+/********Navigation********/
+.navbar {
+    background: #0b1b2d;
+}
+.navbar-nav li {
+    padding: 0 10px;
+    
+}
+.navbar-nav li a {
+    color: white !important;
+}
+.navbar-nav li a:hover {
+        color: $comp!important;
+        
+        transition: color ease-in-out .2s;
+}
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+/***mobile menu icon**/
+.navbar-toggler {
+    outline: none;
+}
+
+
+//===========Hero Section================//
+#hero {
+    background: $bg;
+    color: $norm_white;
+    position: relative;
+    padding-bottom: 1.28em;
+    z-index: 111999;
+    .title {
+        font: {
+            family: 'Saira Condensed', sans-serif;
+            size: 4.575rem;
+        }
+    }
+    .sub-title {
+        font: {
+            family: 'Saira Condensed', sans-serif;
+        }
+    }
+    .red {
+        color: $comp;
+    }
+    
+    .btn {
+        background: $comp;
+        border: none;
+        font-family: $InterFont;
+
+        &:hover {
+            background: $bg!important;
+            border: 1px solid $comp;
+            transition: background ease-in-out .5s;
+        }
+        a {
+            text-decoration: none;
+            color: $norm_white;
+                &:hover {
+                    text-decoration: none;
+                }
+        }
+    }
+    // .mktsvg {
+    //     margin-top: -20px;
+    //     width: 40rem;
+    //     height: 40rem;
+    // }
+    .btm-img {
+        width: 100%;
+        position: absolute;
+        bottom:0;
+        left:0;
+        border: 0;
+        z-index: -999;
+    }
+}
+
+//=======About======//
+#about {
+    padding: 50px 0;
+
+    p {
+        line-height: 2em;
+    }
+}
+
+
+//==========Service===========//
+#services {
+    margin-bottom: 80px;
+   .card {
+    background: $bg;
+    color: $norm_white;
+    border: none;
+    font-size: 0.85em!important;
+    font-family: $InterFont;
+    text-align: center;
+    
+
+        .icons {
+            width: 60px;
+            height: 60px;
+        }
+    
+        p{
+            line-height: 1.5;
+        }
+
+        &:hover {
+            transform:scale(1)!important;
+            background: $bg-gradient;
+            transition: background ease-in .3s;
+        }
+   }
+}
+
+//==============Testimonial========//
+#testimonial {
+    background: $bg;
+    color: $norm_white;
+    font-style: italic;
+    padding: 2em;
+    margin-bottom: 80px;
+
+        .tst-img {
+            filter:grayscale(75%);
+            width: 200px;
+            height: 180px;
+            border-radius: 100px;
+        }
+}
+
+
+//=============Contact===========//
+#contact {
+    margin-inline: auto;
+    margin-bottom: 80px;
+    
+    p{
+        font-size: 0.85em;
+    }
+
+    .btn {
+        background: $comp;
+        border: none;
+        border-radius: 20px;
+
+            &:hover {
+                background: $bg;
+                // border: 1px $comp solid;
+                transition-property: background;
+                transition-duration: .2s;
+                transition-timing-function: ease-in-out;
+                transition-duration: .8s;
+            }
+    }
+}
+
+
+//=========Footer========//
+#footer {
+    background: $bg;
+    color: $norm_white;
+    font-size: 0.85em;
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .footr-menu {
+            list-style: none;
+            margin-top: 40px;
+
+            .footr-link a{
+                text-decoration: none;
+                font-size: 0.85em;
+                line-height: 1.5;
+                color: $norm_white;
+                padding: 10px;
+            }
+
+            .footr-link a:hover {
+                color: $comp;
+                transition: color ease-in .4s;
+            }
+        }
+}
+
+
+
+@media screen and (min-width: tablet){
+    #hero {
+        .title {
+                font-size: 3rem!important;
+        }
+    }
+    #services {
+        .card {
+            margin: 10px;
+        }
+    }
+}
