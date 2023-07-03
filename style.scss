@@ -79,6 +79,7 @@ svg {
     color: $norm_white;
     position: relative;
     padding-bottom: 1.28em;
+    margin-bottom: 80px;
     z-index: 111999;
     .title {
         font: {
@@ -130,7 +131,8 @@ svg {
 
 //=======About======//
 #about {
-    padding: 50px 0;
+    margin-bottom: 50px;
+    padding-top: 50px;
 
     p {
         line-height: 2em;
@@ -140,31 +142,37 @@ svg {
 
 //==========Service===========//
 #services {
-    margin-bottom: 80px;
-   .card {
-    background: $bg;
-    color: $norm_white;
-    border: none;
-    font-size: 0.85em!important;
-    font-family: $InterFont;
-    text-align: center;
-    
+    margin-bottom: 50px;
+    padding: 80px 0;
 
-        .icons {
-            width: 60px;
-            height: 60px;
-        }
-    
-        p{
-            line-height: 1.5;
-        }
+    .card {
+        background: $bg;
+        color: $norm_white;
+        border: none;
+        font-size: 0.85em!important;
+        font-family: $InterFont;
+        text-align: center;
+        margin-left: 30px;
+        
 
-        &:hover {
-            transform:scale(1)!important;
-            background: $bg-gradient;
-            transition: background ease-in .3s;
-        }
-   }
+            .icons {
+                width: 60px;
+                height: 60px;
+            }
+        
+            p{
+                line-height: 1.5;
+            }
+
+            &:hover {
+                transform:scale(1)!important;
+                background: $bg-gradient;
+                transition: background ease-in .3s;
+            }
+            .uniq {
+                margin-inline: auto!important;
+            }
+    }
 }
 
 //==============Testimonial========//
@@ -172,8 +180,8 @@ svg {
     background: $bg;
     color: $norm_white;
     font-style: italic;
-    padding: 2em;
-    margin-bottom: 80px;
+    padding: 80px 0;
+    margin-bottom: 50px;
 
         .tst-img {
             filter:grayscale(75%);
@@ -187,7 +195,8 @@ svg {
 //=============Contact===========//
 #contact {
     margin-inline: auto;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
+    padding: 80px 0;
     
     p{
         font-size: 0.85em;
@@ -223,34 +232,135 @@ svg {
 
         .footr-menu {
             list-style: none;
-            margin-top: 40px;
+            margin-bottom: 10px;
 
             .footr-link a{
+                display: block;
+                float: left;
                 text-decoration: none;
                 font-size: 0.85em;
                 line-height: 1.5;
                 color: $norm_white;
                 padding: 10px;
             }
+        }
 
             .footr-link a:hover {
                 color: $comp;
-                transition: color ease-in .4s;
+                transition: color ease-in .3s;
+            }
+        }
+
+
+
+@media screen and (max-width: 480px){
+   #hero {
+        .title {
+            font-size: 2.5rem;
+        }
+        .layer {
+            padding: 20px;
+        }
+        .uniq {
+            display: none;
+        }
+        button {
+            padding: 8px 10px;
+        }
+    }
+
+    #services {
+        .row {
+            margin-left: 65px!important;
+        }
+    }
+
+    #testimonial {
+        .tst-img { 
+            margin-bottom: 25px;
+        }
+    }
+
+    #footer {
+            .list-layer {
+                margin-left: 20px!important;
+                margin-bottom: 30px;
             }
         }
 }
 
 
-
-@media screen and (min-width: tablet){
+//========Tablet Screens=======//
+@media screen and (max-width: 768px) {
     #hero {
         .title {
-                font-size: 3rem!important;
+            font-size: 2.2em;
+        }
+        .layer {
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 8px 12px;
         }
     }
+
     #services {
         .card {
-            margin: 10px;
+            width: 230px!important;
+            margin-left: -5px;
+        }
+    }
+
+    #contact {
+        button {
+            padding: 8px 16px;
+        }
+    }
+
+    #footer {
+        .text-layer {
+            line-height: 1.8;
+        }
+        .list-layer {
+            width: 50% !important;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #hero {
+        .title {
+            font-size: 2.2em;
+        }
+        .layer {
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 8px 12px;
+        }
+    }
+
+    #services {
+        .card {
+            width: 230px!important;
+            margin-left: -5px;
+        }
+    }
+
+    #contact {
+        button {
+            padding: 8px 16px;
+        }
+    }
+
+    #footer {
+        .text-layer {
+            line-height: 1.8;
+        }
+        .list-layer {
+            width: 50% !important;
         }
     }
 }
