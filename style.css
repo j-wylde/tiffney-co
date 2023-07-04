@@ -103,6 +103,7 @@ svg {
 #services .card {
   background: #0b1b2d;
   color: #fff;
+  width: 18rem;
   border: none;
   font-size: 0.85em !important;
   font-family: "Inter", sans-serif;
@@ -174,7 +175,6 @@ svg {
   margin-bottom: 10px;
 }
 #footer .footr-menu .footr-link a {
-  display: block;
   float: left;
   text-decoration: none;
   font-size: 0.85em;
@@ -185,6 +185,9 @@ svg {
 #footer .footr-link a:hover {
   color: #ff4040;
   transition: color ease-in 0.3s;
+}
+#footer .list-layer {
+  margin-left: 0px;
 }
 
 @media screen and (max-width: 480px) {
@@ -200,15 +203,25 @@ svg {
   #hero button {
     padding: 8px 10px;
   }
-  #services .row {
-    margin-left: 65px !important;
+  #services .card {
+    margin-inline: auto !important;
   }
   #testimonial .tst-img {
     margin-bottom: 25px;
   }
+  #footer {
+    display: block !important;
+  }
+  #footer .text-layer {
+    margin-right: 0 !important;
+  }
   #footer .list-layer {
-    margin-left: 20px !important;
-    margin-bottom: 30px;
+    width: 100% !important;
+    display: inline-flex;
+    flex-wrap: nowrap;
+  }
+  #footer .footr-menu {
+    padding: 0;
   }
 }
 @media screen and (max-width: 768px) {

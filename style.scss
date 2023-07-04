@@ -148,6 +148,7 @@ svg {
     .card {
         background: $bg;
         color: $norm_white;
+        width: 18rem;
         border: none;
         font-size: 0.85em!important;
         font-family: $InterFont;
@@ -235,7 +236,6 @@ svg {
             margin-bottom: 10px;
 
             .footr-link a{
-                display: block;
                 float: left;
                 text-decoration: none;
                 font-size: 0.85em;
@@ -248,6 +248,9 @@ svg {
             .footr-link a:hover {
                 color: $comp;
                 transition: color ease-in .3s;
+            }
+            .list-layer {
+                margin-left: 0px;
             }
         }
 
@@ -270,8 +273,8 @@ svg {
     }
 
     #services {
-        .row {
-            margin-left: 65px!important;
+        .card {
+            margin-inline: auto!important;
         }
     }
 
@@ -282,9 +285,20 @@ svg {
     }
 
     #footer {
+        display: block!important;
+        
+
+        .text-layer{
+            margin-right: 0!important;
+        }
+
             .list-layer {
-                margin-left: 20px!important;
-                margin-bottom: 30px;
+                width: 100%!important;
+                display: inline-flex;
+                flex-wrap: nowrap;
+            }
+            .footr-menu{
+                padding: 0;
             }
         }
 }
