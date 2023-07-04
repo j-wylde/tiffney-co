@@ -108,7 +108,7 @@ svg {
   font-size: 0.85em !important;
   font-family: "Inter", sans-serif;
   text-align: center;
-  margin-left: 30px;
+  margin-inline: auto !important;
 }
 #services .card .icons {
   width: 60px;
