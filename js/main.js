@@ -1,20 +1,23 @@
-function sendEmail(){
-const senderName = document.querySelector("#name").value;
-const email = document.querySelector("#email").value;
-const phone = document.querySelector("#tel").value;
-const msg = document.querySelector("#msg").value;
-let reply = document.querySelector(".responseText");
+(function() {
+  emailjs.init('VfVJqHx5OvuAN819r');
+})();
 
-Email.send({
-  secureToken: "d71db374-5c65-4aae-a2c5-346496b28438",
-  Host: "smtp.elasticemail.com",
-  Username: "declan@tiffney.co.uk",
-  Password: "D1ECAF838C44510625D7C603A10658A87D4C",
-  To: 'declan@tiffney.co.uk',
-  From: email,
-  Subject: "New Contact Form Message From tiffney.co.uk",
-  Body: `Name: <b>${senderName}</b>\nEmail: <b>${email}</b>\nPhone: <b>${phone}</b>\n\n<em>${msg}</em>`,
-}).then(
-message => alert(message)
-);
-}
+document.querySelector("#contact-form").onsubmit = function(e){
+  e.preventDefault();
+  
+  let reply = document.querySelector("#responseText");
+  const serviceID = "service_sqfdgfo";
+  const templateID = "template_zxgcnhl";
+
+  // send the email here
+  emailjs.sendForm(serviceID, templateID, this).then(
+    (response) => {
+      reply.textContent = "SUCCESS!", response.status, response.text;
+      alert("Message Sent!")
+    },
+    (error) => {
+      reply.textContent = "FAILED...", error;
+      alert("Please, Try Again")
+    }
+  );
+};

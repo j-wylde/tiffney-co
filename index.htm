@@ -175,18 +175,18 @@
               </p>
             </div>
             <div class="col-md-8">
-              <form class="bg-white p-4" id="contact-form" onsubmit="sendEmail();">
+              <form class="bg-white p-4" id="contact-form">
                 <div class="mb-3">
                   <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                  <input type="text" class="form-control" id="from_name" name="from_name" placeholder="Enter your name">
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                  <input type="email" class="form-control" id="from_email" name="from_email" placeholder="Enter your email">
                 </div>
                 <div class="mb-3">
                   <label for="tel" class="form-label">Telephone</label>
-                  <input type="tel" class="form-control" id="tel" name="tel" placeholder="Enter your number">
+                  <input type="tel" class="form-control" id="user_tel" name="user_tel" placeholder="Enter your number">
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Message</label>
@@ -225,7 +225,7 @@
     </footer>
 
 
-
-    <script src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script><!--=====EmailSender======-->
+    <script src="./js/bootstrap.min.js"></script><!--====Boostrap=======-->
 </body>
 </html>
